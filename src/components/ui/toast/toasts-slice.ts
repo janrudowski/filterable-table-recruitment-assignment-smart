@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { nanoid } from 'nanoid';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { nanoid } from "nanoid";
 
-export type ToastType = 'error' | 'warning' | 'info' | 'default';
+export type ToastType = "error" | "warning" | "info" | "default";
 
 export interface Toast {
   id: string;
@@ -18,12 +18,11 @@ const initialState: ToastsState = {
   toasts: {},
 };
 
-
 const toastsSlice = createSlice({
-  name: 'toasts',
+  name: "toasts",
   initialState,
   reducers: {
-    addToast: (state, action: PayloadAction<Omit<Toast, 'id'>>) => {
+    addToast: (state, action: PayloadAction<Omit<Toast, "id">>) => {
       const newToast: Toast = {
         ...action.payload,
         id: nanoid(),

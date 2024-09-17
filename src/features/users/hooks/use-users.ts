@@ -7,7 +7,7 @@ import { UserFilters } from "@/types/api";
 export function useFilteredUsers() {
   const dispatch = useAppDispatch();
   const { list, loading, filters, error } = useAppSelector(
-    (state) => state.users
+    (state) => state.users,
   );
 
   useEffect(() => {
@@ -19,5 +19,12 @@ export function useFilteredUsers() {
   const isLoading = loading === "pending";
   const isError = loading === "failed";
 
-  return { filteredUsers, isLoading, isError, errorMessage: error, filters, setFilters: (filters: UserFilters) => dispatch(filtersSet(filters)) };
+  return {
+    filteredUsers,
+    isLoading,
+    isError,
+    errorMessage: error,
+    filters,
+    setFilters: (filters: UserFilters) => dispatch(filtersSet(filters)),
+  };
 }

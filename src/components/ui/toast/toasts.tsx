@@ -1,6 +1,6 @@
-import React from 'react';
-import { useAppSelector } from '@/app/hooks';
-import { Toast } from './toast';
+import React from "react";
+import { useAppSelector } from "@/app/hooks";
+import { Toast } from "./toast";
 
 export const Toasts: React.FC = () => {
   const toasts = useAppSelector((state) => state.toasts.toasts);

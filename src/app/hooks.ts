@@ -10,15 +10,13 @@ export const useDarkMode = () => {
   const isDarkMode = useAppSelector((state) => state.darkMode.isDarkMode);
   const dispatch = useAppDispatch();
 
-  if(isDarkMode) {
-    document.documentElement.classList.add('dark')
-    window.localStorage.setItem('theme', 'dark')
+  if (isDarkMode) {
+    document.documentElement.classList.add("dark");
+    window.localStorage.setItem("theme", "dark");
   } else {
-    document.documentElement.classList.remove('dark')
-    window.localStorage.setItem('theme', 'light')
+    document.documentElement.classList.remove("dark");
+    window.localStorage.setItem("theme", "light");
   }
 
-
-  return {isDarkMode, toggleDarkMode: () => dispatch(toggleDarkModeAction())}
-
+  return { isDarkMode, toggleDarkMode: () => dispatch(toggleDarkModeAction()) };
 };
