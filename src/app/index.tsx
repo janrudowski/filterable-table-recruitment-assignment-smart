@@ -6,7 +6,7 @@ export default function App() {
   return (
     <AppProvider>
       <div className="flex justify-end p-4">
-      <DarkModeSwitch />
+        <DarkModeSwitch />
       </div>
       <UsersView />
     </AppProvider>

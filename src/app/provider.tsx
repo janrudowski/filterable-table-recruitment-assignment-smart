@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { ErrorBoundary } from "react-error-boundary";
@@ -22,38 +22,33 @@ const AxiosInterceptor = ({ children }: AppProviderProps) => {
       (error) => {
         const message = error.response?.data?.message || error.message;
         showToast({
-          header: 'Error',
+          header: "Error",
           content: message,
-          type: 'error',  
-        })
+          type: "error",
+        });
         return Promise.reject(error);
-      }
+      },
     );
-  }, [])
-
+  }, []);
 
   return children;
-}
+};
 
 const DarkModeProvider = ({ children }: AppProviderProps) => {
   useDarkMode();
   return children;
-}
+};
 
 export default function AppProvider({ children }: AppProviderProps) {
   return (
     <React.Suspense fallback={<div>asd</div>}>
-      <ErrorBoundary
-        FallbackComponent={MainError}
-      >
-          <Provider store={store}>
-            <DarkModeProvider>
+      <ErrorBoundary FallbackComponent={MainError}>
+        <Provider store={store}>
+          <DarkModeProvider>
             <Toasts />
-            <AxiosInterceptor>
-              {children}
-            </AxiosInterceptor>
-            </DarkModeProvider>
-          </Provider>
+            <AxiosInterceptor>{children}</AxiosInterceptor>
+          </DarkModeProvider>
+        </Provider>
       </ErrorBoundary>
     </React.Suspense>
   );

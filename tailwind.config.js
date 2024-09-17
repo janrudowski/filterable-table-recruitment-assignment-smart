@@ -4,6 +4,6 @@ export default {
   theme: {
     extend: {},
   },
-  darkMode: ['class', '[data-mode="dark"]'],
-  plugins: [require('tailwindcss-animated')],
+  darkMode: ["class", '[data-mode="dark"]'],
+  plugins: [require("tailwindcss-animated")],
 };

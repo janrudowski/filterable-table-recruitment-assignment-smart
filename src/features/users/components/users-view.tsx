@@ -7,16 +7,25 @@ export default function UsersView() {
     useFilteredUsers();
 
   function handleFilter(header: keyof User, filterValue: string) {
-    setFilters({[header]: filterValue});
+    setFilters({ [header]: filterValue });
   }
 
   if (isError) {
-    return <div className="flex justify-center items-center h-screen">{errorMessage}</div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        {errorMessage}
+      </div>
+    );
   }
   return (
     <div className="flex justify-center items-center">
       <div className="w-full max-w-[1000px] px-4">
-        <Table headers={['name', 'username', 'email', 'phone']} rows={filteredUsers} onFilter={handleFilter} loading={isLoading} />
+        <Table
+          headers={["name", "username", "email", "phone"]}
+          rows={filteredUsers}
+          onFilter={handleFilter}
+          loading={isLoading}
+        />
       </div>
     </div>
   );

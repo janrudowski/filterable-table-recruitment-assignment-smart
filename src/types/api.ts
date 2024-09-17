@@ -31,4 +31,4 @@ export interface User extends Record<string, any> {
   phone: string;
   website: string;
   company: UserCompany;
-};
+}

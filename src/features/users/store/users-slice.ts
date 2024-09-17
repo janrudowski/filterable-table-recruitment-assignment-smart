@@ -23,7 +23,7 @@ const usersSlice = createSlice({
   } satisfies UsersState as UsersState,
   reducers: {
     filtersSet(state, action: PayloadAction<UserFilters>) {
-      state.filters = {...state.filters, ...action.payload};
+      state.filters = { ...state.filters, ...action.payload };
     },
   },
   extraReducers: (builder) => {
