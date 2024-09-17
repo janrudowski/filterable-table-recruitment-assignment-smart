@@ -1,7 +1,5 @@
 # Filterable Table Recruitment Assignment
 
-This project is a smart, filterable table application built with modern web technologies. Here's a brief overview of the tools and technologies used:
-
 ## Tech Stack
 
 - **React**: A JavaScript library for building user interfaces
